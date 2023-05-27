@@ -1,47 +1,41 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { HomeCards, HomeContainer, HomeHeader, HomeNavBar } from "./homePage";
-import { Link, Navigate } from "react-router-dom";
-import { CardContact } from "../../components/CardContact";
-// import { ContactContext } from "../../contexts/ContactContext";
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
-    const { user, newLoading } = useContext(AuthContext);
-    // const { modalIsOpen, handleModal, contact } = useContext(ContactContext);
+    const { client, newLoading } = useContext(AuthContext);
   
     if(newLoading) {
       return null;
     }
   
-    return user? (
+    return (
       <HomeContainer>
         <HomeNavBar>
           {/* <img src={logo} alt="" /> */}
           <Link to={`/`} onClick={()=>{
-            user.user = null;
+            client.client = null;
             localStorage.removeItem("@TOKEN");
           }}>Sair</Link>
         </HomeNavBar>
         <HomeHeader>
-          <h2>Olá, {user.name} </h2>
-          {/* <span>{user.course_module}</span> */}
+        {client?.client &&(
+          <h2>Olá, {client.client.name} </h2>
+        )}
         </HomeHeader>
         <HomeCards>
             <div>
             <h3>Contatos</h3>
-            <button type="button" onClick={() => handleModal()}>+</button>
+            <button type="button">+</button>
             </div>
             <div className="divUl">
             <ul>
               <li><h2>oi</h2></li>
-              {/* {contact.map((element) =>  */}
-             <CardContact key={element.id} element={element} />
-            {/* // )} */}
             </ul>
             </div>
           </HomeCards>  
-          {/* {modalIsOpen && <ModalTechnology/>} */}
       </HomeContainer>
-    ): <Navigate to={"/"}/>
+    )
   
 }

@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const RegisterPage = () => {
 
-    const {registerUser} = useContext(AuthContext);
+    const {registerClient} = useContext(AuthContext);
     const [loading, setLoading] = useState(false);
   
     const {
@@ -35,7 +35,7 @@ export const RegisterPage = () => {
     const submit = async (data) => {
       const dataNew = { ...data };
       delete dataNew.passwordConfirm;
-      await registerUser(dataNew);
+      await registerClient(dataNew);
       reset();
     };
   

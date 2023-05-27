@@ -9,7 +9,7 @@ import { useContext } from "react";
 
 export const LoginPage = () => {
 
-    const {loginUser, loading} = useContext(AuthContext);
+    const {loginClient, loading} = useContext(AuthContext);
 
     const navigate = useNavigate()
   
@@ -24,7 +24,7 @@ export const LoginPage = () => {
     });
   
     const submit = async (data) => {
-      await loginUser(data);
+      await loginClient(data);
      
       setTimeout(()=> {
         navigate("/home")

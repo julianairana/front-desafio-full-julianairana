@@ -8,13 +8,34 @@ import { api } from "../services/api";
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({children}) => {
-  const [user, setUser] = useState(null);
+  const [client, setClient] = useState(null);
   const [loading, setLoading] = useState(false);
   const [ newLoading, setNewLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  async function getUser() {
+  const loginClient = async (data) => {
+    try {
+      setLoading(true);
+      const response = await api.post("/login", data);
+      localStorage.setItem("@TOKEN", response.data.token);
+      const { token, client: clientResponse } = response.data;
+      setClient(clientResponse);
+      localStorage.setItem("@TOKEN", token);
+      toast.success("Login realizado com sucesso!");
+
+      setTimeout(() => {
+        navigate("/home")
+      }, 5000);
+
+    } catch (error) {
+      toast.error("Login não realizado!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  async function getclient() {
     const tokenValidate = localStorage.getItem("@TOKEN");
 
     if(!tokenValidate) {
@@ -29,7 +50,7 @@ export const AuthProvider = ({children}) => {
 
     try {
         const response = await api.get(`/clients/${tokenValidate}`);
-        setUser(response.data);
+        setClient(response.data);
     }
     catch (error) {
         console.error(error);
@@ -40,31 +61,10 @@ export const AuthProvider = ({children}) => {
   }
 
   useEffect(() => {
-    getUser();
+    getclient();
     }, []);
 
-  const loginUser = async (data) => {
-    try {
-      setLoading(true);
-      const response = await api.post("/login", data);
-      localStorage.setItem("@TOKEN", response.data.token);
-      const { token, user: userResponse } = response.data;
-      setUser(userResponse);
-      localStorage.setItem("@TOKEN", token);
-      toast.success("Login realizado com sucesso!");
-
-      setTimeout(() => {
-        navigate("/home");
-      }, 3000);
-
-    } catch (error) {
-      toast.error("Login não realizado!");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const registerUser = async (data) => {
+  const registerClient = async (data) => {
     try {
       setLoading(true);
       const response = await api.post("/clients", data);
@@ -81,7 +81,7 @@ export const AuthProvider = ({children}) => {
   };
 
   return (
-    <AuthContext.Provider value={{ loginUser, user, toast, loading, newLoading, setNewLoading, registerUser, getUser }}>
+    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getclient }}>
       {children}
     </AuthContext.Provider>
   );
