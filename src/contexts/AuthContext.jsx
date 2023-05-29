@@ -35,7 +35,7 @@ export const AuthProvider = ({children}) => {
     }
   };
 
-  async function getclient() {
+  async function getClient() {
     const tokenValidate = localStorage.getItem("@TOKEN");
 
     if(!tokenValidate) {
@@ -61,7 +61,7 @@ export const AuthProvider = ({children}) => {
   }
 
   useEffect(() => {
-    getclient();
+    getClient();
     }, []);
 
   const registerClient = async (data) => {
@@ -81,7 +81,7 @@ export const AuthProvider = ({children}) => {
   };
 
   return (
-    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getclient }}>
+    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getClient }}>
       {children}
     </AuthContext.Provider>
   );

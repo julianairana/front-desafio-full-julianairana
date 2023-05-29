@@ -26,6 +26,7 @@ export const RegisterPage = () => {
         name: "",
         email: "",
         password: "",
+        image: "",
         phone: "",
         gender: "",
       },
@@ -34,7 +35,6 @@ export const RegisterPage = () => {
   
     const submit = async (data) => {
       const dataNew = { ...data };
-      delete dataNew.passwordConfirm;
       await registerClient(dataNew);
       reset();
     };
@@ -44,11 +44,14 @@ export const RegisterPage = () => {
         <Register>
           <div className="divLeft">
             <img src={logo} alt="" />
+            <h2>Crie sua agenda virtual</h2>
+            <span>E tenha os seus contatos, na palma da mão!</span>
           </div>
           <div className="divRight">
             <div className="divRegister">
-            <h2>Crie sua agenda virtual</h2>
-            <span>E tenha os seus contatos, na palma da mão!</span>
+            <h2>Cadastro</h2>
+            <Link to={`/`}>Voltar</Link>
+            </div>
             <form onSubmit={handleSubmit(submit)} noValidate>
               <label htmlFor="name">Nome</label>
               <input
@@ -74,14 +77,14 @@ export const RegisterPage = () => {
               />
               {errors.password?.message && <span>{errors.password.message}</span>}
   
-              <label htmlFor="passwordConfirm">Confirmar Senha</label>
+              <label htmlFor="passwordConfirm">Imagem</label>
               <input
-                type="password"
-                placeholder="Digite novamente sua senha"
-                {...register("passwordConfirm")}
+                type="url"
+                placeholder="Coloque uma imagem"
+                {...register("image")}
               />
-              {errors.passwordConfirm?.message && (
-                <span>{errors.passwordConfirm.message}</span>
+              {errors.image?.message && (
+                <span>{errors.image.message}</span>
               )}
   
               <label htmlFor="phone">Contato</label>
@@ -111,8 +114,7 @@ export const RegisterPage = () => {
                 {loading ? "Cadastrando..." : "Cadastrar"}
               </button>
             </form>
-            <Link to={`/`}>Voltar</Link>
-          </div>
+
           </div>
         </Register>
   

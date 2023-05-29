@@ -1,25 +1,24 @@
-import { createContext } from "react";
-import { useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
-import Modal from "react-modal";
-Modal.setAppElement("#root");
+import { toast } from "react-toastify";
+import { api } from "../services/api";
 
 export const ContactContext = createContext({});
 
 export const ContactProvider = ({ children }) => {
-  const { user, getUser } = useContext(AuthContext);
+  const { client, getClient } = useContext(AuthContext);
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalIsEditOpen, setIsEditOpen] = useState(false);
-  const [editSelect, setEditSelect] = useState(null);
+  // const [modalIsEditOpen, setIsEditOpen] = useState(false);
+  // const [editSelect, setEditSelect] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const contact = user?.contacts;
+  const contact = client?.contacts;
 
   async function AddContact(data) {
     try {
       setLoading(true);
       await api.post("/contacts", data);
-      getUser();
+      getClient();
       setIsOpen(false);
       toast.success("Contato criado com sucesso!");
     } catch (error) {
@@ -33,43 +32,43 @@ export const ContactProvider = ({ children }) => {
     setIsOpen(!modalIsOpen);
   }
 
-  function handleEditModal() {
-    setIsEditOpen(!modalIsEditOpen);
-  }
+  // function handleEditModal() {
+  //   setIsEditOpen(!modalIsEditOpen);
+  // }
 
-  async function EditContact(data) {
-    try {
-      setLoading(true);
-      await api.put(`/contacts/${data.id}`, data);
-      getUser();
-      setIsEditOpen(false);
-      toast.success("Contato alterado com sucesso!");
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+  // async function EditContact(data) {
+  //   try {
+  //     setLoading(true);
+  //     await api.put(`/contacts/${data.id}`, data);
+  //     getClient();
+  //     setIsEditOpen(false);
+  //     toast.success("Contato alterado com sucesso!");
+  //   } catch (error) {
+  //     console.error(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
-  async function deletContact(id) {
-    try {
-      setLoading(true);
+  // async function deletContact(id) {
+  //   try {
+  //     setLoading(true);
 
-      await api.delete(`/contacts/${id}`);
-      getUser();
+  //     await api.delete(`/contacts/${id}`);
+  //     getClient();
 
-      toast.info("Contato removido com sucesso!");
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+  //     toast.info("Contato removido com sucesso!");
+  //   } catch (error) {
+  //     console.error(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
 
 
   return (
-    <TechnologyContext.Provider
+    <ContactContext.Provider
       value={{
         handleModal,
         modalIsOpen,
@@ -77,18 +76,18 @@ export const ContactProvider = ({ children }) => {
         AddContact,
         setLoading,
         loading,
-        user,
+        client,
         contact,
-        EditContact,
-        editSelect,
-        setEditSelect,
-        modalIsEditOpen,
-        setIsEditOpen,
-        handleEditModal,
-        deletContact
+        // EditContact,
+        // editSelect,
+        // setEditSelect,
+        // modalIsEditOpen,
+        // setIsEditOpen,
+        // handleEditModal,
+        // deletContact
       }}
     >
       {children}
-    </TechnologyContext.Provider>
+    </ContactContext.Provider>
   );
 };

@@ -25,6 +25,14 @@ export const Register = styled.div`
         margin-top: 20px;
     }
 
+    .divRegister {
+        display: flex;
+        align-items: center;
+        width: 85%;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
     form {
         width: 85%;
         gap: 7px;
@@ -67,7 +75,7 @@ export const Register = styled.div`
     }
 
     span {
-        font-family: Inter, sans-serif;
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -75,25 +83,18 @@ export const Register = styled.div`
     }
 
    a {
-        width:85%;
-        height: 40px;
-        background: #C0BFC7;;
-        border-radius: 8px;
-        color: #33443C;
         font-family: 'Inter', sans-serif;
         font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
+        color: #C0BFC7;
+        font-weight: 400;
+        font-size: 14px;
         line-height: 28px;
-        margin-top: 4px;
-        text-align: center;
-        padding: 5px; 
-        background-color: #C0BFC7;
+        font-size: 14px;
+        margin-top: 22px;
     }
 
     .divRight {
         width: 30%;
-        /* height: 751px; */
         max-width: 369px;
         border: 2px solid rgb(214, 167, 58, 0.5);
         box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
@@ -103,6 +104,8 @@ export const Register = styled.div`
         align-items: center;
         flex-direction: column;
         background-color: #2C3B34;
+        height: auto;
+        margin-top: 50px;
     }
 
     .divCard {
@@ -121,16 +124,15 @@ export const Register = styled.div`
         font-weight: 500;
     }
 
-    img {
-        width: 100%;
-    }
-
 
     @media (max-width: 900px) {
-            flex-direction: column-reverse;
+            flex-direction: column;
             width: 100%;
             display: flex;
             align-items: center;
+            padding: 0px;
+            height: auto;
+            }
        
             .divRight {
                 width: 100%;
@@ -138,14 +140,10 @@ export const Register = styled.div`
             }
 
             .divLeft {
-                width: 100%;
                 display: flex;
                 align-items: center;
+                height: auto;
+                margin-top: 10px;
             }
-
-        .imgBolinhas{
-            display: none;
-        }
          
-    }
 `

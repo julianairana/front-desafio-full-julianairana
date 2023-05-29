@@ -5,7 +5,7 @@ export const registerSchema = yup.object().shape({
       .string()
       .required("O nome é obrigatório!")
       .min(3, "O nome precisa ter pelo menos 3 caracteres.")
-      .max(200, "O nome pode ter no máximo 200 caracteres."),
+      .max(45, "O nome pode ter no máximo 45 caracteres."),
     email: yup
       .string()
       .required("E-mail inválido.")
@@ -27,13 +27,9 @@ export const registerSchema = yup.object().shape({
         /(?=.*[$*&@#])/,
         "É necessário conter ao menos um caractere especial."
       ),
-    passwordConfirm: yup
+    image: yup
       .string()
-      .oneOf([yup.ref("password"), null], "A senha não confere"),
-    // image: yup
-    //   .string()
-    //   .required("Coloque sua foto se desejar")
-    //   .max(200, "A bio pode contar até 200 caracteres."),
+      .required("Coloque uma imagem"),
     phone: yup.string().required("O seu contato é obrigatório!"),
     gender: yup.string().required("A opção de gênero é opcional!")
   });

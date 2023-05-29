@@ -1,28 +1,24 @@
-// import { useContext } from "react";
-// import { ContactContext } from "../../contexts/ContactContext";
-// import { ModalEdit } from "../ModalEditDelet";
 import { StyledCardContact } from "./cardContact";
+import edit from "../../img/edit.png";
+import trash from "../../img/trash.png";
 
 
 export const CardContact = ({ element }) => {
-//   const { modalIsEditOpen, handleEditModal, setEditSelect } =
-//     useContext(ContactContext);
 
   return (
     <StyledCardContact key={element.id}>
-      <h3>{element.title}</h3>
-      <div className="divSpan">
-        <span>{element.status}</span>
-        <button
-          type="button"
-          className="buttonTrash"
-          onClick={() => {
-            handleEditModal();
-            setEditSelect(element);
-          }}
-        ></button>
+      <div className="divLi">
+        <h2>Nome: <p>{element.fullName}</p></h2>
+        <h2>E-mail: <p>{element.email}</p></h2>
+        <h2>Número: <p>{element.phone}</p></h2>
+        <h2>Gênero: <p>{element.gender}</p></h2>
+        <h2>Data de registro: <p>{element.dateRegister}</p></h2>
       </div>
-      {/* {modalIsEditOpen && <ModalEdit element={element} />} */}
+      <div className="divIcons">
+        <img src={edit} alt="" />
+        <img src={trash} alt="" />
+      </div>
+   
     </StyledCardContact>
   );
 };

@@ -122,11 +122,6 @@ export const Login = styled.div`
         font-weight: 500;
     }
 
-    /* img {
-        width: 300px;
-        height: 300px;
-    } */
-
     @media (max-width: 900px) {
             flex-direction: column-reverse;
             width: 100%;
@@ -143,10 +138,6 @@ export const Login = styled.div`
                 display: flex;
                 align-items: center;
             }
-
-        .imgBolinhas{
-            display: none;
-        }
          
     }
 `
