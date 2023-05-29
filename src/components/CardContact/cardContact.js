@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import edit from "../../img/edit.png";
+import trash from "../../img/trash.png";
 
 
 export const StyledCardContact = styled.li`
@@ -49,6 +51,20 @@ export const StyledCardContact = styled.li`
     display: flex;
     justify-content: space-around;
     margin-top: 6px;
+  }
+
+  .buttonEdit {
+    background-image: url(${edit});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+  }
+
+  .buttonDelet {
+    background-image: url(${trash});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
   }
   
 `

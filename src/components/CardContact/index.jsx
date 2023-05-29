@@ -1,9 +1,11 @@
+import { useContext } from "react";
+import { ContactContext } from "../../contexts/ContactContext";
 import { StyledCardContact } from "./cardContact";
-import edit from "../../img/edit.png";
-import trash from "../../img/trash.png";
 
 
-export const CardContact = ({ element }) => {
+export const CardContact = ({element}) => {
+
+  const { handleEditModal, deletContact } = useContext(ContactContext);
 
   return (
     <StyledCardContact key={element.id}>
@@ -15,8 +17,8 @@ export const CardContact = ({ element }) => {
         <h2>Data de registro: <p>{element.dateRegister}</p></h2>
       </div>
       <div className="divIcons">
-        <img src={edit} alt="" />
-        <img src={trash} alt="" />
+       <button className="buttonEdit" onClick={() => handleEditModal()}></button>
+       <button className="buttonDelet" onClick={() => deletContact(element.id)}></button>
       </div>
    
     </StyledCardContact>

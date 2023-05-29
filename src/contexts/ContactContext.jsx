@@ -8,8 +8,8 @@ export const ContactContext = createContext({});
 export const ContactProvider = ({ children }) => {
   const { client, getClient } = useContext(AuthContext);
   const [modalIsOpen, setIsOpen] = useState(false);
-  // const [modalIsEditOpen, setIsEditOpen] = useState(false);
-  // const [editSelect, setEditSelect] = useState(null);
+  const [modalIsEditOpen, setIsEditOpen] = useState(false);
+  const [editSelect, setEditSelect] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const contact = client?.contacts;
@@ -32,38 +32,38 @@ export const ContactProvider = ({ children }) => {
     setIsOpen(!modalIsOpen);
   }
 
-  // function handleEditModal() {
-  //   setIsEditOpen(!modalIsEditOpen);
-  // }
+  function handleEditModal() {
+    setIsEditOpen(!modalIsEditOpen);
+  }
 
-  // async function EditContact(data) {
-  //   try {
-  //     setLoading(true);
-  //     await api.put(`/contacts/${data.id}`, data);
-  //     getClient();
-  //     setIsEditOpen(false);
-  //     toast.success("Contato alterado com sucesso!");
-  //   } catch (error) {
-  //     console.error(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }
+  async function EditContact(data) {
+    try {
+      setLoading(true);
+      await api.put(`/contacts/${data.id}`, data);
+      getClient();
+      setIsEditOpen(false);
+      toast.success("Contato alterado com sucesso!");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-  // async function deletContact(id) {
-  //   try {
-  //     setLoading(true);
+  async function deletContact(id) {
+    try {
+      setLoading(true);
 
-  //     await api.delete(`/contacts/${id}`);
-  //     getClient();
+      await api.delete(`/contacts/${id}`);
+      getClient();
 
-  //     toast.info("Contato removido com sucesso!");
-  //   } catch (error) {
-  //     console.error(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }
+      toast.info("Contato removido com sucesso!");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
 
 
@@ -78,13 +78,13 @@ export const ContactProvider = ({ children }) => {
         loading,
         client,
         contact,
-        // EditContact,
-        // editSelect,
-        // setEditSelect,
-        // modalIsEditOpen,
-        // setIsEditOpen,
-        // handleEditModal,
-        // deletContact
+        EditContact,
+        editSelect,
+        setEditSelect,
+        modalIsEditOpen,
+        setIsEditOpen,
+        handleEditModal,
+        deletContact
       }}
     >
       {children}
