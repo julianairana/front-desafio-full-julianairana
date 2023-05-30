@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { CardContact } from "../../components/CardContact";
 import { ModalAddContact } from "../../components/ModalAddContact";
 import { ContactContext } from "../../contexts/ContactContext";
+import { ModalEditContact } from "../../components/ModalEditContact";
 
 export const HomePage = () => {
     const { client, newLoading } = useContext(AuthContext);
-    const { modalIsOpen, handleModal } = useContext(ContactContext);
+    const { modalIsOpen, handleModal, modalIsEditOpen } = useContext(ContactContext);
 
     if(newLoading) {
       return null;
@@ -45,6 +46,7 @@ export const HomePage = () => {
             </div>
           </HomeCards>  
           {modalIsOpen && <ModalAddContact/>}
+          {modalIsEditOpen && <ModalEditContact/>}
       </HomeContainer>
     )
   

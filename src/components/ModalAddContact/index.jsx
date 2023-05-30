@@ -58,7 +58,7 @@ const modalAddContact = (
             type="email"
             name="email"
             placeholder="E-mail"
-            classemail="modalInput"
+            className="modalInput"
             {...register("email")}
           />
            {errors.email?.message && <span>{errors.email.message}</span>}
@@ -69,7 +69,7 @@ const modalAddContact = (
             type="text"
             name="phone"
             placeholder="Número"
-            classphone="modalInput"
+            className="modalInput"
             {...register("phone")}
           />
            {errors.phone?.message && <span>{errors.phone.message}</span>}

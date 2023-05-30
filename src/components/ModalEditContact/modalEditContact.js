@@ -43,12 +43,6 @@ export const ContainerModal = styled.div`
     color: #868e96;
   }
 
-  /* .buttonCloseModal:hover {
-    color: #ffffff;
-    -webkit-transform: scale(1.1);
-    -webkit-transition: scale(1.1);
-  } */
-
   .modalForm {
     max-width: 369px;
     width: 100%;
@@ -74,6 +68,7 @@ export const ContainerModal = styled.div`
     border-radius: 4px;
     color: #f8f9fa;
   }
+  
   .modalInput::placeholder {
     color: #f8f9fa;
     font-family: "Inter", sans-serif;

@@ -1,22 +1,23 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ContainerModal } from "./modalAddContact";
+import { ContainerModal } from "./modalEditContact";
+import { modalEditSchema } from "./modalEditSchema";
 import { createPortal } from "react-dom";
 import { ContactContext } from "../../contexts/ContactContext";
-import { modalEditSchema } from "./modalEditSchema";
 
 export const ModalEditContact = () => {
 
-    const { handleEditModal, EditContact, loading} = useContext(ContactContext);
+    const { handleEditModal, EditContact, loading, editSelect} = useContext(ContactContext);
 
     const {register, handleSubmit, reset, formState: { errors }} = useForm({
         mode: "onBlur",
         defaultValues: {
-            fullName: "",
-            email: "",
-            phone: "",
-            gender: "",
+            id: editSelect.id,
+            fullName: editSelect.fullName,
+            email: editSelect.email,
+            phone: editSelect.phone,
+            gender: editSelect.gender,
           },
         resolver: yupResolver(modalEditSchema),
     });
@@ -28,13 +29,11 @@ export const ModalEditContact = () => {
         reset();
     }
 
-const modalEditContact = (
+const editContactModal = (
 <ContainerModal>
-      <div
-        className="divModal"
-      >
+      <div className="divModal">
         <div className="divModalHeader">
-          <h2 className="modalTitle">Cadastrar Contato</h2>
+          <h2 className="modalTitle">Editar Contato</h2>
           <button onClick={() => handleEditModal()} className="buttonCloseModal">
             X
           </button>
@@ -58,7 +57,7 @@ const modalEditContact = (
             type="email"
             name="email"
             placeholder="E-mail"
-            classemail="modalInput"
+            className="modalInput"
             {...register("email")}
           />
            {errors.email?.message && <span>{errors.email.message}</span>}
@@ -69,7 +68,7 @@ const modalEditContact = (
             type="text"
             name="phone"
             placeholder="Número"
-            classphone="modalInput"
+            className="modalInput"
             {...register("phone")}
           />
            {errors.phone?.message && <span>{errors.phone.message}</span>}
@@ -91,7 +90,7 @@ const modalEditContact = (
               <span>{errors.gender.message}</span>
             )}
           <button type="submit" className="buttonRegisterModal" disabled={loading}>
-            {loading? "carregando": "Cadastrar Contato"}
+            {loading? "carregando": "Editar Contato"}
           </button>
         </form>
       </div>
@@ -99,6 +98,6 @@ const modalEditContact = (
         )
 
         return (
-            createPortal(modalEditContact, document.getElementById("editModal-root"))
+            createPortal(editContactModal, document.getElementById("editModal-root"))
         )
     }

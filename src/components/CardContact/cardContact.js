@@ -4,7 +4,7 @@ import trash from "../../img/trash.png";
 
 
 export const StyledCardContact = styled.li`
-        height: 290px;
+        height: 340px;
         width: 20%;
         border-radius: 5px;
         list-style: none;

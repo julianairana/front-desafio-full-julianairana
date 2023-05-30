@@ -39,7 +39,7 @@ export const ContactProvider = ({ children }) => {
   async function EditContact(data) {
     try {
       setLoading(true);
-      await api.put(`/contacts/${data.id}`, data);
+      await api.patch(`/contacts/${data.id}`, data);
       getClient();
       setIsEditOpen(false);
       toast.success("Contato alterado com sucesso!");
