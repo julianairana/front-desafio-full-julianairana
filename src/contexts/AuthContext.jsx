@@ -23,6 +23,8 @@ export const AuthProvider = ({children}) => {
       setClient(clientResponse);
       localStorage.setItem("@TOKEN", token);
       toast.success("Login realizado com sucesso!");
+      
+      getClient();
 
       setTimeout(() => {
         navigate("/home")

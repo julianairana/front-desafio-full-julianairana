@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerModal = styled.div`
-  height: 100%;
+    height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -16,8 +16,12 @@ export const ContainerModal = styled.div`
     width: 100%;
     height: 342px;
     border-radius: 4px;
-    background-color: #343b41;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
   }
+
   .divModalHeader {
     max-width: 369px;
     width: 100%;
@@ -26,13 +30,19 @@ export const ContainerModal = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #fec49b;
+    border: 2px solid  #fec49b;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
+
   .modalTitle {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 14px;
-    color: #f8f9fa;
+    color: #045071;
   }
+  
   .buttonCloseModal{
     max-width: 11px;
     width: 100%;
@@ -40,77 +50,72 @@ export const ContainerModal = styled.div`
     font-family: "Nunito", sans-serif;
     font-weight: 600;
     font-size: 16px;
-    color: #868e96;
+    color: #045071;
   }
 
   .modalForm {
     max-width: 369px;
     width: 100%;
     padding: 12px 20px;
-    background-color: #212529;
+    background-color:#045071;
     display: flex;
     flex-direction: column;
     gap: 22.33px;
+    border: 2px solid #045071;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
+
   .modalLabel {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 12.18px;
-    color: #f8f9fa;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color:#fcd8af;
   }
+
   .modalInput {
-    max-width: 329.93px;
     width: 100%;
-    height:48px;
-    padding: 0px 16px;
-    background-color: #343b41;
-    border: 1.22px solid #f8f9fa;
-    border-radius: 4px;
-    color: #f8f9fa;
+    height: 40px;
+    padding: 0px 10px 0px 15px;
+    border: 2px solid rgb(51, 51, 51);
+    border-radius: 8px;
+    background-color: rgb(192, 191, 199);
   }
-  
-  .modalInput::placeholder {
-    color: #f8f9fa;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 16.24px;
-  }
+ 
   .modalSelect {
-    max-width: 329.93px;
     width: 100%;
-    height:48px;
-    padding: 0rem 16px;
-    background-color: #343b41;
-    border: 1.22px solid #f8f9fa;
-    border-radius: 4px;
-    color: #f8f9fa;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 16.24px;
+        height: 40px;
+        padding: 0px 10px 0px 15px;
+        border: 2px solid #333333;
+        border-radius: 8px;
+        background-color: #C0BFC7;
   }
   .buttonRegisterModal {
-    max-width: 324px;
     width: 100%;
-    height:48px;
-    padding: 0px 22px;
-    background-color: #ff577f;
-    border: 1.22px solid #ff577f;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #ffffff;
-    border-radius: 4px;
+        height: 40px;
+        background: #fcd8af;
+        border-radius: 8px;
+        color:#045071;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 28px;
+        margin-top: 4px;
   }
+  
   .buttonRegisterModal:hover {
-    border: 1.22px solid #ff427f;
-    background-color: #ff427f;
+    border: 1.22px solid #fe9b91;
+    background-color: #fe9b91;
   }
 
   span {
         font-family: 'Inter', sans-serif;
         font-size: 12px;
         font-weight: 600;
-        color: #868E96;
+        color:#fe9b91;
         margin-top: 5px;
     }
 

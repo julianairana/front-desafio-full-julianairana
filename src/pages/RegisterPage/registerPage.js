@@ -7,6 +7,7 @@ export const Register = styled.div`
     justify-content: center;
     align-items: center;
     gap: 40px;
+    background-color: #fec49b;
 
     .divLeft {
         width: 30%;
@@ -14,6 +15,7 @@ export const Register = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        
     }
 
     h2 {
@@ -21,7 +23,7 @@ export const Register = styled.div`
         font-size: 18px;
         font-weight: 700;
         line-height: 24px;
-        color: #D6A73A;
+        color:#fcd8af;
         margin-top: 20px;
     }
 
@@ -48,7 +50,7 @@ export const Register = styled.div`
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        color: #D6A73A;
+        color:#fcd8af;
     }
 
     input, select {
@@ -63,9 +65,9 @@ export const Register = styled.div`
     button {
         width: 100%;
         height: 40px;
-        background: #D6A73A;
+        background-color:#fcd8af;
         border-radius: 8px;
-        color: #33443C;
+        color: #045071;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600;
@@ -74,12 +76,17 @@ export const Register = styled.div`
         margin-top: 4px;
     }
 
+    button:hover {
+    border: 1.22px solid #fe9b91;
+    background-color:#fe9b91;
+  }
+
     span {
         font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
-        color: rgb(214, 167, 58);
+        color: #045071;
     }
 
    a {
@@ -96,14 +103,12 @@ export const Register = styled.div`
     .divRight {
         width: 30%;
         max-width: 369px;
-        border: 2px solid rgb(214, 167, 58, 0.5);
-        box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        background-color: #2C3B34;
+        background-color:#045071;
         height: auto;
         margin-top: 50px;
     }

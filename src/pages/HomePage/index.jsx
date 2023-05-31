@@ -1,35 +1,40 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import { HomeCards, HomeContainer, HomeNavBar } from "./homePage";
+import { HomeCards, HomeContainer, HomeHeader, HomeNavBar } from "./homePage";
 import { Link } from "react-router-dom";
 import { CardContact } from "../../components/CardContact";
 import { ModalAddContact } from "../../components/ModalAddContact";
 import { ContactContext } from "../../contexts/ContactContext";
 import { ModalEditContact } from "../../components/ModalEditContact";
+import logo from "../../img/logo.png";
 
 export const HomePage = () => {
     const { client, newLoading } = useContext(AuthContext);
     const { modalIsOpen, handleModal, modalIsEditOpen } = useContext(ContactContext);
 
-    if(newLoading) {
-      return null;
-    }
-  
+ 
     return (
+      <>
+      {
+        newLoading && <div>Carregando...</div>
+      }
+      {
+        client && (
       <HomeContainer>
         <HomeNavBar>
-        {client?.client &&(
-          <h2>Olá, {client.client.name}</h2>
-        )}
-          <img className="imgPerfil" src={client.client.image} alt="" />
+        <img src={logo} alt="" />
           <Link to={`/`} onClick={()=>{
             client.client = null;
             localStorage.removeItem("@TOKEN");
           }}>Sair</Link>
         </HomeNavBar>
-        {/* <HomeHeader>
+        <HomeHeader>
+          {client?.client &&(
+            <h2>Olá, {client.client.name}</h2>
+          )}
+            <img className="imgPerfil" src={client.client.image} alt="" />
        
-        </HomeHeader> */}
+        </HomeHeader>
         <HomeCards>
             <div>
             <h3>Contatos</h3>
@@ -48,6 +53,8 @@ export const HomePage = () => {
           {modalIsOpen && <ModalAddContact/>}
           {modalIsEditOpen && <ModalEditContact/>}
       </HomeContainer>
+      )}
+      </>
     )
   
 }

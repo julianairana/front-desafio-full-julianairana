@@ -6,21 +6,23 @@ export const HomeContainer = styled.div`
         display: flex;
         flex-direction: column;
         gap: 25px;
+        background-color: #fec49b;
+        
 `
 export const HomeNavBar = styled.div`
-  width: 100%;
-    height: 72px;
+    width: 100%;
+    margin-top: 14px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
     
     h2 {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
-    color: #D6A73A;
-    margin-left: 105px;
+    color: #045071;
 }
 
     a {
@@ -29,9 +31,9 @@ export const HomeNavBar = styled.div`
         width: 55px;
         border-radius: 4px;
         padding: 0px 16px 0px 16px;
-        background: #212529;
+        background: #045071;
         border-radius: 4px;
-        color: #F8F9FA;
+        color: #fcd8af;
         font-size: 12px;
         font-weight: 600;
         line-height: 28px;
@@ -47,20 +49,18 @@ export const HomeNavBar = styled.div`
 
 export const HomeHeader = styled.div`
         width: 100%;
-        height: 118px;
+        height: 46px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        border-top: 1px solid #212529;
-        border-bottom: 1px solid #212529;
+
 
         h2 {
         font-family: 'Inter', sans-serif;
         font-size: 18px;
         font-weight: 700;
         line-height: 28px;
-        color: #D6A73A;
-        margin-left: 105px;
+        color:#045071;
     }
 
        span {
@@ -73,11 +73,20 @@ export const HomeHeader = styled.div`
         margin-right: 104px;
     }
 
-    @media (max-width: 900px) {
-            width: 100%;
+    .imgPerfil {
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
             display: flex;
-            flex-direction: column;
-            align-items: baseline;
+            margin: 0 auto;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+        flex-direction: column;
         }
 
 `
@@ -85,6 +94,7 @@ export const HomeHeader = styled.div`
 
 export const HomeCards = styled.div`
         width: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
 
@@ -100,14 +110,14 @@ export const HomeCards = styled.div`
         font-size: 14px;
         font-weight: 600;
         line-height: 18px;
-        color: #D6A73A;  
+        color: #045071;
         margin-left: 7px;
         }
 
         button {
         height: 32px;
         width: 32px;
-        background: #212529;
+        background: #045071;
         border-radius: 4px;    
         margin-right: 7px;
         font-size: 10.72px;
@@ -118,23 +128,36 @@ export const HomeCards = styled.div`
         .divUl {
             display: flex;
             justify-content: center;
-            width: 65%;
-            margin: auto;
+            width: 100%;
+            margin: 0px;
+            padding:0px;
+            overflow: auto;
+            max-height: 400px;
+        }
+
+        .divUl::-webkit-scrollbar {
+        width: 10px; 
+        }
+
+        .divUl::-webkit-scrollbar-thumb {
+        background-color: #888; 
+        }
+
+        .divUl::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
         }
 
         ul {
-        width: 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         flex-direction: column;
         margin-top: 30px;
-        background-color: rgb(192, 191, 199, 0.5);
-        border-radius: 4px;
         padding: 12px 0px 12px 0px;
         flex-direction: row;
         gap: 20px;
-
+        width: 65%;
+        background-color:#045071;
         }
 
         @media (max-width: 900px) {
@@ -149,6 +172,10 @@ export const HomeCards = styled.div`
 
             span {
                 font-size: 10px;
+            }
+
+            ul {
+                width: 100%;
             }
 
         }

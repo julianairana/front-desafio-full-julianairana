@@ -11,13 +11,12 @@ export const StyledCardContact = styled.li`
         display: flex;
         align-items: center;
         flex-direction: column;
-        border: 2px solid rgb(214, 167, 58, 0.5);
+        border: 2px solid #045071;
         border-radius: 5px;
         min-width: 200px;
-        background-color: rgb(44, 59, 52);
-
+        background-color: #fcd8af;
   &:hover {
-    border: 2px solid #D6A73A;
+    border: 2px solid #045071;
     }
 
 
@@ -35,7 +34,7 @@ export const StyledCardContact = styled.li`
     font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: #D6A73A;
+    color: #045071;
     width: 200px;
   }
 
@@ -43,7 +42,7 @@ export const StyledCardContact = styled.li`
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: rgb(192, 191, 199);
+    color:  #045071;
     margin-top: 5px;
   }
 
