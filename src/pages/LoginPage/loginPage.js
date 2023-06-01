@@ -7,19 +7,18 @@ export const Login = styled.div`
     justify-content: center;
     align-items: center;
     gap: 40px;
-    background-color: #fec49b;
     
     .divLeft {
         width: 30%;
-        height: 60%;
+        /* height: 60%; */
         max-width: 369px;
-        box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
+        border-radius: 7px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        background-color:#045071;
+        background-color: #FFFDFF ;
+        border: 2px solid #7E55D8;
 
     }
 
@@ -29,7 +28,7 @@ export const Login = styled.div`
         font-weight: 700;
         line-height: 24px;
         margin-top: 20px;
-        color:#fcd8af;
+        color: #7E55D8;
     }
 
     form {
@@ -47,7 +46,7 @@ export const Login = styled.div`
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        color:#fcd8af;
+        color: #7E55D8;
     }
 
     input {
@@ -56,26 +55,26 @@ export const Login = styled.div`
         padding: 0px 10px 0px 15px;
         border: 2px solid #333333;
         border-radius: 8px;
-        background-color: #C0BFC7;
+        background-color: #DEDFED;
     }
 
     button {
         width: 100%;
         height: 40px;
         border-radius: 8px;
-        color: #045071;
+        color: #131216;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
         line-height: 28px;
         margin-top: 4px;
-        background-color: #fcd8af;
+        background-color: #7E55D8;
     }
 
     button:hover {
-    border: 1.22px solid #fe9b91;
-    background-color:#fe9b91;
+    border: 1.22px solid #BCE363;
+    background-color:#BCE363;
   }
 
     span {
@@ -83,14 +82,14 @@ export const Login = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
-        color:#fcd8af;
+        color: #D0875A;
     }
 
     a {
         width:85%;
         height: 40px;
         border-radius: 8px;
-        color: #045071;
+        color: #131216;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600;
@@ -100,12 +99,13 @@ export const Login = styled.div`
         text-align: center;
         padding: 5px; 
         margin-top: 21px;
-        background-color: #fe9b91;
+        background-color: #9DA1B0;
+        margin-bottom: 20px;
     }
 
     a:hover {
-    border: 1.22px solid  #C0BFC7; 
-    background-color: #C0BFC7; 
+    border: 1.22px solid  #D0875A; 
+    background-color: #D0875A; 
   }
 
 

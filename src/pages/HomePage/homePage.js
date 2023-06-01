@@ -6,7 +6,6 @@ export const HomeContainer = styled.div`
         display: flex;
         flex-direction: column;
         gap: 25px;
-        background-color: #fec49b;
         
 `
 export const HomeNavBar = styled.div`
@@ -33,7 +32,7 @@ export const HomeNavBar = styled.div`
         padding: 0px 16px 0px 16px;
         background: #045071;
         border-radius: 4px;
-        color: #fcd8af;
+        color: #FFFF;
         font-size: 12px;
         font-weight: 600;
         line-height: 28px;
@@ -73,19 +72,26 @@ export const HomeHeader = styled.div`
         margin-right: 104px;
     }
 
+    .divPerfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
     .imgPerfil {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 100px;
     }
 
     @media (max-width: 600px) {
         width: 100%;
-            display: flex;
-            margin: 0 auto;
-            padding: 50px;
-            display: flex;
-            align-items: center;
+        display: flex;
+        margin: 0 auto;
+        padding: 50px;
+        display: flex;
+        align-items: center;
         flex-direction: column;
         }
 
@@ -103,15 +109,16 @@ export const HomeCards = styled.div`
         display: flex;
         align-items: baseline;
         justify-content: space-around;
+        margin-top: 23px;
+        margin-bottom: 10px;
         }
 
         h3 {
         font-family: 'Inter', sans-serif;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 600;
         line-height: 18px;
         color: #045071;
-        margin-left: 7px;
         }
 
         button {
@@ -157,7 +164,10 @@ export const HomeCards = styled.div`
         flex-direction: row;
         gap: 20px;
         width: 65%;
-        background-color:#045071;
+        background: rgb(203,212,252);
+        background: linear-gradient(0deg, rgba(203,212,252,1) 3%, rgba(217,164,139,1) 72%);
+        border: 2px transparent;
+        border-radius: 7px;
         }
 
         @media (max-width: 900px) {
@@ -167,7 +177,7 @@ export const HomeCards = styled.div`
             padding: 50px;
 
             h3 {
-                font-size: 10px;
+                font-size: 18px;
             }
 
             span {

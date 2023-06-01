@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerModal = styled.div`
-    height: 100%;
+  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -30,8 +30,8 @@ export const ContainerModal = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fec49b;
-    border: 2px solid  #fec49b;
+    background-color: #CED4FC;
+    border: 2px solid  #CED4FC;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -60,7 +60,7 @@ export const ContainerModal = styled.div`
     background-color:#045071;
     display: flex;
     flex-direction: column;
-    gap: 22.33px;
+    gap: 12.33px;
     border: 2px solid #045071;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -72,7 +72,7 @@ export const ContainerModal = styled.div`
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        color:#fcd8af;
+        color:#CED4FC;
   }
 
   .modalInput {
@@ -81,7 +81,7 @@ export const ContainerModal = styled.div`
     padding: 0px 10px 0px 15px;
     border: 2px solid rgb(51, 51, 51);
     border-radius: 8px;
-    background-color: rgb(192, 191, 199);
+    background-color: #DEDFED;
   }
  
   .modalSelect {
@@ -90,12 +90,12 @@ export const ContainerModal = styled.div`
         padding: 0px 10px 0px 15px;
         border: 2px solid #333333;
         border-radius: 8px;
-        background-color: #C0BFC7;
+        background-color: #DEDFED;
   }
   .buttonRegisterModal {
     width: 100%;
         height: 40px;
-        background: #fcd8af;
+        background: #CED4FC;
         border-radius: 8px;
         color:#045071;
         font-family: 'Inter', sans-serif;
@@ -107,16 +107,15 @@ export const ContainerModal = styled.div`
   }
   
   .buttonRegisterModal:hover {
-    border: 1.22px solid #fe9b91;
-    background-color: #fe9b91;
+    border: 1.22px solid #BCE363;
+    background-color:#BCE363;
   }
 
   span {
         font-family: 'Inter', sans-serif;
         font-size: 12px;
         font-weight: 600;
-        color:#fe9b91;
-        margin-top: 5px;
+        color:#BCE363;
     }
 
   @media (max-width: 700px) {

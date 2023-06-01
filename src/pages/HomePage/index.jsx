@@ -32,7 +32,10 @@ export const HomePage = () => {
           {client?.client &&(
             <h2>Olá, {client.client.name}</h2>
           )}
+          <div className="divPerfil">
             <img className="imgPerfil" src={client.client.image} alt="" />
+            <button>Ver perfil</button>
+          </div>
        
         </HomeHeader>
         <HomeCards>

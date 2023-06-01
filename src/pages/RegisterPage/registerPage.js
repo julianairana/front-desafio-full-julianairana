@@ -7,7 +7,6 @@ export const Register = styled.div`
     justify-content: center;
     align-items: center;
     gap: 40px;
-    background-color: #fec49b;
 
     .divLeft {
         width: 30%;
@@ -15,7 +14,6 @@ export const Register = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        
     }
 
     h2 {
@@ -23,7 +21,7 @@ export const Register = styled.div`
         font-size: 18px;
         font-weight: 700;
         line-height: 24px;
-        color:#fcd8af;
+        color: #7E55D8;
         margin-top: 20px;
     }
 
@@ -50,7 +48,7 @@ export const Register = styled.div`
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        color:#fcd8af;
+        color: #7E55D8;
     }
 
     input, select {
@@ -59,15 +57,15 @@ export const Register = styled.div`
         padding: 0px 10px 0px 15px;
         border: 2px solid #333333;
         border-radius: 8px;
-        background-color: #C0BFC7;
+        background-color: #DEDFED;
     }
 
     button {
         width: 100%;
         height: 40px;
-        background-color:#fcd8af;
+        background-color: #7E55D8;
         border-radius: 8px;
-        color: #045071;
+        color: #131216;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600;
@@ -76,9 +74,9 @@ export const Register = styled.div`
         margin-top: 4px;
     }
 
-    button:hover {
-    border: 1.22px solid #fe9b91;
-    background-color:#fe9b91;
+   button:hover {
+    border: 1.22px solid #BCE363 ;
+    background-color:#BCE363 ;
   }
 
     span {
@@ -86,13 +84,21 @@ export const Register = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
-        color: #045071;
+        color: #D0875A;
+    }
+
+    .spanText {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #131216;
     }
 
    a {
         font-family: 'Inter', sans-serif;
         font-style: normal;
-        color: #C0BFC7;
+        color: #131216;
         font-weight: 400;
         font-size: 14px;
         line-height: 28px;
@@ -108,7 +114,8 @@ export const Register = styled.div`
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        background-color:#045071;
+        background-color: #FFFDFF ;
+        border: 2px solid #7E55D8;
         height: auto;
         margin-top: 50px;
     }

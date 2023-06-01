@@ -44,8 +44,8 @@ export const RegisterPage = () => {
         <Register>
           <div className="divLeft">
             <img src={logo} alt="" />
-            <span>Crie sua agenda virtual</span>
-            <span>E tenha os seus contatos, na palma da mão!</span>
+            <span className="spanText">Crie sua agenda virtual</span>
+            <span className="spanText">E tenha os seus contatos, na palma da mão!</span>
           </div>
           <div className="divRight">
             <div className="divRegister">

@@ -4,7 +4,7 @@ import trash from "../../img/trash.png";
 
 
 export const StyledCardContact = styled.li`
-        height: 340px;
+        /* height: 340px; */
         width: 20%;
         border-radius: 5px;
         list-style: none;
@@ -12,9 +12,10 @@ export const StyledCardContact = styled.li`
         align-items: center;
         flex-direction: column;
         border: 2px solid #045071;
-        border-radius: 5px;
+        border-radius: 10px;
         min-width: 200px;
         background-color: #fcd8af;
+
   &:hover {
     border: 2px solid #045071;
     }
@@ -28,6 +29,8 @@ export const StyledCardContact = styled.li`
     margin-top: 10px;
     width: 90%;
     margin-top: 15px;
+    overflow: hidden;
+    height: 303px;
   }
 
   h2 {
@@ -35,15 +38,16 @@ export const StyledCardContact = styled.li`
     font-size: 15px;
     font-weight: 700;
     color: #045071;
-    width: 200px;
+    width: 175px;
   }
 
   p {
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color:  #045071;
+    color:  #131216;
     margin-top: 5px;
+    width: 175px;
   }
 
   .divIcons{
