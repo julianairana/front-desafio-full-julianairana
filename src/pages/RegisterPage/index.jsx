@@ -77,7 +77,7 @@ export const RegisterPage = () => {
               />
               {errors.password?.message && <span>{errors.password.message}</span>}
   
-              <label htmlFor="passwordConfirm">Imagem</label>
+              <label htmlFor="image">Imagem</label>
               <input
                 type="url"
                 placeholder="Coloque uma imagem"

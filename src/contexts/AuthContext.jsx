@@ -10,9 +10,11 @@ export const AuthContext = createContext({});
 export const AuthProvider = ({children}) => {
   const [client, setClient] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [ newLoading, setNewLoading] = useState(true);
-
-  const navigate = useNavigate();
+  const [newLoading, setNewLoading] = useState(true);
+  const [modalIsEditClientOpen, setIsEditClientOpen] = useState(false);
+  const [editClientSelect, setEditClientSelect] = useState(null);
+  
+    const navigate = useNavigate();
 
   const loginClient = async (data) => {
     try {
@@ -82,8 +84,27 @@ export const AuthProvider = ({children}) => {
     }
   };
 
+  function handleEditClientModal() {
+    console.log("oi")
+    setIsEditClientOpen(!modalIsEditClientOpen);
+  }
+
+  async function EditClient(data) {
+    try {
+      setLoading(true);
+      await api.patch(`/clients/${data.id}`, data);
+      getClient();
+      setIsEditClientOpen(false);
+      toast.success("Cliente alterado com sucesso!");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getClient }}>
+    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getClient, editClientSelect, setEditClientSelect, handleEditClientModal, EditClient }}>
       {children}
     </AuthContext.Provider>
   );

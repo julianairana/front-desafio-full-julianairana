@@ -12,6 +12,9 @@ export const ContactProvider = ({ children }) => {
   const [editSelect, setEditSelect] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const [modalIsEditClientOpen, setIsEditClientOpen] = useState(false);
+  const [editClientSelect, setEditClientSelect] = useState(null);
+
   const contact = client?.contacts;
 
   async function AddContact(data) {
@@ -65,8 +68,6 @@ export const ContactProvider = ({ children }) => {
     }
   }
 
-
-
   return (
     <ContactContext.Provider
       value={{
@@ -84,7 +85,7 @@ export const ContactProvider = ({ children }) => {
         modalIsEditOpen,
         setIsEditOpen,
         handleEditModal,
-        deletContact
+        deletContact,
       }}
     >
       {children}

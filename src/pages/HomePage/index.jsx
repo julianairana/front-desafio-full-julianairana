@@ -7,9 +7,11 @@ import { ModalAddContact } from "../../components/ModalAddContact";
 import { ContactContext } from "../../contexts/ContactContext";
 import { ModalEditContact } from "../../components/ModalEditContact";
 import logo from "../../img/logo.png";
+import { ModalEditClient } from "../../components/ModalEditClient";
 
 export const HomePage = () => {
-    const { client, newLoading } = useContext(AuthContext);
+    const { client, newLoading, modalIsEditClientOpen, handleEditClientModal, setEditClientSelect } = useContext(AuthContext);
+
     const { modalIsOpen, handleModal, modalIsEditOpen } = useContext(ContactContext);
 
  
@@ -34,7 +36,7 @@ export const HomePage = () => {
           )}
           <div className="divPerfil">
             <img className="imgPerfil" src={client.client.image} alt="" />
-            <button>Ver perfil</button>
+            <button type="button" onClick={() => {handleEditClientModal(); setEditClientSelect()}}>Ver perfil</button>
           </div>
        
         </HomeHeader>
@@ -55,6 +57,7 @@ export const HomePage = () => {
           </HomeCards>  
           {modalIsOpen && <ModalAddContact/>}
           {modalIsEditOpen && <ModalEditContact/>}
+          {modalIsEditClientOpen && <ModalEditClient/>}
       </HomeContainer>
       )}
       </>
