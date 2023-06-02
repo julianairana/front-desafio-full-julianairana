@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { HomeCards, HomeContainer, HomeHeader, HomeNavBar } from "./homePage";
 import { Link, Navigate } from "react-router-dom";
@@ -17,7 +17,7 @@ export const HomePage = () => {
     const { client, newLoading } = useContext(AuthContext);
     
     const { modalIsOpen, handleModal, modalIsEditOpen, modalIsClientOpen, handleClientModal, setClientSelect, modalIsDeletOpen } = useContext(ContactContext);
-
+   
     if (newLoading) {
     return <div>Carregando...</div>;
   }
@@ -25,7 +25,7 @@ export const HomePage = () => {
   if (!client) {
     return <Navigate to="/" />;
   }
- 
+
     return (
       <>
       {

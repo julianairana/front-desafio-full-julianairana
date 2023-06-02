@@ -90,15 +90,15 @@ export const Register = styled.div`
     .spanText {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 14px;
-        color: #131216;
+        color: #045071;
     }
 
    a {
         font-family: 'Inter', sans-serif;
         font-style: normal;
-        color: #131216;
+        color: #045071;
         font-weight: 400;
         font-size: 14px;
         line-height: 28px;
@@ -129,11 +129,6 @@ export const Register = styled.div`
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-    }
-
-    .spanNegrito {
-        color: #333333;
-        font-weight: 500;
     }
 
 

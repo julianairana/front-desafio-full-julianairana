@@ -10,7 +10,6 @@ export const Login = styled.div`
     
     .divLeft {
         width: 30%;
-        /* height: 60%; */
         max-width: 369px;
         border-radius: 7px;
         display: flex;
@@ -115,7 +114,6 @@ export const Login = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        /* background-color: #33443C; */
     }
 
     .divCard {

@@ -21,6 +21,6 @@ button{
 }
 body, html {
     overflow-X: hidden !important;
-    background-color: #CED4FC ;
+    background-color: #CED4FC;
 }
 `

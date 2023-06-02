@@ -1,14 +1,14 @@
-import moment from "moment";
 import { useContext } from "react";
 import { ContactContext } from "../../contexts/ContactContext";
 import { StyledCardContact } from "./cardContact";
+import moment from "moment";
+import "moment/locale/pt-br";
 
 export const CardContact = ({element}) => {
 
   const dateTime = new Date(element.dateRegister)
-  const convertedDateTime = moment(dateTime).utcOffset("+03:00")
-  const dateFormated = convertedDateTime.format("DD/MM/YYYY")
-  const timeFormated = convertedDateTime.format("HH:mm:ss")
+  const dateFormated = moment(dateTime).format("DD/MM/YYYY")
+  const timeFormated = moment(dateTime).format("HH:mm:ss")
   
   const { handleEditModal, deletContact, setEditSelect } = useContext(ContactContext);
 

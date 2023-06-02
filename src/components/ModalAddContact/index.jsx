@@ -5,6 +5,7 @@ import { ContainerModal } from "./modalAddContact";
 import { modalAddSchema } from "./modalAddSchema";
 import { createPortal } from "react-dom";
 import { ContactContext } from "../../contexts/ContactContext";
+import InputMask from "react-input-mask";
 
 export const ModalAddContact = () => {
 
@@ -64,8 +65,9 @@ const modalAddContact = (
            <label htmlFor="phone" className="modalLabel">
             Número
           </label>
-          <input
+          <InputMask
             type="text"
+            mask="(99) 99999-9999"
             name="phone"
             placeholder="Número"
             className="modalInput"

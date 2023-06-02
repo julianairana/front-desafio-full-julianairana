@@ -14,7 +14,6 @@ export const ContainerModal = styled.div`
 .divModal {
     max-width: 369px;
     width: 100%;
-    /* height: 342px; */
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -58,7 +57,6 @@ export const ContainerModal = styled.div`
     max-width: 369px;
     width: 100%;
     padding: 12px 20px;
-    /* background-color:#045071; */
     display: flex;
     flex-direction: column;
     gap: 12.33px;
@@ -129,11 +127,6 @@ export const ContainerModal = styled.div`
   .buttonDeleteModal:hover {
     border: 1.22px solid #D0875A ;
     background-color:#D0875A ;
-  }
-
-  .divButtons {
-    display: flex;
-    justify-content: space-between;
   }
 
   span {

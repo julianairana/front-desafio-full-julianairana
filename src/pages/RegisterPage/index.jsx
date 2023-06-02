@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import InputMask from "react-input-mask";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const RegisterPage = () => {
 
     const {registerClient} = useContext(AuthContext);
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
   
     const {
       register,
@@ -88,8 +89,9 @@ export const RegisterPage = () => {
               )}
   
               <label htmlFor="phone">Contato</label>
-              <input
-                type="text"
+              <InputMask
+                type="text" 
+                mask="(99) 99999-9999"
                 placeholder="Digite seu número"
                 {...register("phone")}
               />

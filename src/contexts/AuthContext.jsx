@@ -45,9 +45,6 @@ export const AuthProvider = ({children}) => {
         return;
     }
 
-    // else if(tokenValidate){
-    //   navigate("/home")
-    // }
     api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`
 
     try {
@@ -82,9 +79,17 @@ export const AuthProvider = ({children}) => {
     }
   };
 
-
   return (
-    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getClient }}>
+    <AuthContext.Provider 
+    value={{ 
+      loginClient, 
+      client, 
+      toast, 
+      loading, 
+      newLoading, 
+      setNewLoading, 
+      registerClient, 
+      getClient }}>
       {children}
     </AuthContext.Provider>
   );

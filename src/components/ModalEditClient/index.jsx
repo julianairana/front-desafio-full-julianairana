@@ -5,6 +5,7 @@ import { modalEditClientSchema } from "./modalEditClientSchema";
 import { createPortal } from "react-dom";
 import { ContainerModal } from "./modalEditClient";
 import { ContactContext } from "../../contexts/ContactContext";
+import InputMask from "react-input-mask";
 
 export const ModalEditClient = () => {
 
@@ -77,8 +78,9 @@ const editClientModal = (
            <label htmlFor="phone" className="modalLabel">
             Número
           </label>
-          <input
+          <InputMask
             type="text"
+            mask="(99) 99999-9999"
             name="phone"
             placeholder="Número"
             className="modalInput"
@@ -102,11 +104,9 @@ const editClientModal = (
           {errors.gender?.message && (
               <span>{errors.gender.message}</span>
             )}
-            {/* <div className="divButtons"> */}
           <button type="submit" className="buttonRegisterModal" disabled={loading}>
             {loading? "carregando": "Editar Cliente"}
           </button>
-          {/* </div> */}
         </form>
           <button type="submit" className="buttonDeleteModal" onClick={() => {handleDeletModal()}}>Deletar conta</button>
       </div>

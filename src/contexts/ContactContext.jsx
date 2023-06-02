@@ -161,7 +161,6 @@ export const ContactProvider = ({ children }) => {
         deletSelect,
         deleteToken,
         redirectToLogin
-        
       }}
     >
       {children}
