@@ -11,26 +11,24 @@ export const AuthProvider = ({children}) => {
   const [client, setClient] = useState(null);
   const [loading, setLoading] = useState(false);
   const [newLoading, setNewLoading] = useState(true);
-  const [modalIsEditClientOpen, setIsEditClientOpen] = useState(false);
-  const [editClientSelect, setEditClientSelect] = useState(null);
-  
-    const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   const loginClient = async (data) => {
     try {
       setLoading(true);
       const response = await api.post("/login", data);
-      localStorage.setItem("@TOKEN", response.data.token);
+      localStorage.setItem("@TOKENCLIENT", response.data.token);
       const { token, client: clientResponse } = response.data;
       setClient(clientResponse);
       localStorage.setItem("@TOKEN", token);
       toast.success("Login realizado com sucesso!");
-      
+      api.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
       getClient();
 
       setTimeout(() => {
         navigate("/home")
-      }, 5000);
+      }, 3000);
 
     } catch (error) {
       toast.error("Login não realizado!");
@@ -47,9 +45,9 @@ export const AuthProvider = ({children}) => {
         return;
     }
 
-    else if(tokenValidate){
-      navigate("/home")
-    }
+    // else if(tokenValidate){
+    //   navigate("/home")
+    // }
     api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`
 
     try {
@@ -84,27 +82,9 @@ export const AuthProvider = ({children}) => {
     }
   };
 
-  function handleEditClientModal() {
-    console.log("oi")
-    setIsEditClientOpen(!modalIsEditClientOpen);
-  }
-
-  async function EditClient(data) {
-    try {
-      setLoading(true);
-      await api.patch(`/clients/${data.id}`, data);
-      getClient();
-      setIsEditClientOpen(false);
-      toast.success("Cliente alterado com sucesso!");
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   return (
-    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getClient, editClientSelect, setEditClientSelect, handleEditClientModal, EditClient }}>
+    <AuthContext.Provider value={{ loginClient, client, toast, loading, newLoading, setNewLoading, registerClient, getClient }}>
       {children}
     </AuthContext.Provider>
   );

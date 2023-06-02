@@ -26,7 +26,6 @@ export const HomeNavBar = styled.div`
 
     a {
         font-family: 'Inter', sans-serif;
-        height: 32px;
         width: 55px;
         border-radius: 4px;
         padding: 0px 16px 0px 16px;
@@ -85,6 +84,15 @@ export const HomeHeader = styled.div`
         border-radius: 100px;
     }
 
+    .buttonPerfil {
+        width: 78px;
+        background: #045071;
+        border-radius: 4px;    
+        font-size: 10.72px;
+        padding: 10px 10px;
+        color: #ffffff;
+    }
+
     @media (max-width: 600px) {
         width: 100%;
         display: flex;
@@ -93,7 +101,7 @@ export const HomeHeader = styled.div`
         display: flex;
         align-items: center;
         flex-direction: column;
-        }
+    }
 
 `
  
@@ -105,12 +113,26 @@ export const HomeCards = styled.div`
         flex-direction: column;
 
         div {
-        width: 100%;   
         display: flex;
         align-items: baseline;
         justify-content: space-around;
-        margin-top: 23px;
-        margin-bottom: 10px;
+        margin-top: 14px;
+        margin-bottom: 3px;
+        }
+
+        .notContact {
+            width: 420px;
+            height: 400px;
+        }
+
+        .divContacts {
+            display: flex;
+            gap: 22px;
+        }
+
+        .buttonPDF {
+            width: 78px;
+            height: 30px;
         }
 
         h3 {
@@ -187,6 +209,10 @@ export const HomeCards = styled.div`
             ul {
                 width: 100%;
             }
+
+            .notContact {
+                width: 90%;
+            } 
 
         }
 `

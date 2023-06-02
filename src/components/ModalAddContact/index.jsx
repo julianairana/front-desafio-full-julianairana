@@ -24,7 +24,6 @@ export const ModalAddContact = () => {
     async function submit(data) {
         const information = { ...data };
         await AddContact(information);
-        console.log(information);
         reset();
     }
 

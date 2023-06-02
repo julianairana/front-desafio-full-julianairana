@@ -30,13 +30,20 @@ export const ContainerModal = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #CED4FC;
-    border: 2px solid  #CED4FC;
+    background-color:#045071;
+    border: 2px solid #045071;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
 
   .modalTitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #CED4FC;
+  }
+
+  .modalText {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -50,55 +57,29 @@ export const ContainerModal = styled.div`
     font-family: "Nunito", sans-serif;
     font-weight: 600;
     font-size: 16px;
-    color: #045071;
+    color:#CED4FC;
   }
 
   .modalForm {
     max-width: 369px;
     width: 100%;
     padding: 12px 20px;
-    background-color:#045071;
+    background-color:#CED4FC;
     display: flex;
     flex-direction: column;
     gap: 12.33px;
-    border: 2px solid #045071;
+    border: 2px solid #CED4FC;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-  }
-
-  .modalLabel {
-        font-family: 'Inter', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        color:#CED4FC;
-  }
-
-  .modalInput {
-    width: 100%;
-    height: 40px;
-    padding: 0px 10px 0px 15px;
-    border: 2px solid rgb(51, 51, 51);
-    border-radius: 8px;
-    background-color: #DEDFED;
+    height: 40%;
   }
  
-  .modalSelect {
-    width: 100%;
-        height: 40px;
-        padding: 0px 10px 0px 15px;
-        border: 2px solid #333333;
-        border-radius: 8px;
-        background-color: #DEDFED;
-  }
-
-  .buttonRegisterModal {
+  .buttonCancelModal {
         width: 47%;
         height: 40px;
-        background: #CED4FC;
+        background: #045071;
         border-radius: 8px;
-        color:#045071;
+        color:#D0875A ;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600;
@@ -107,7 +88,7 @@ export const ContainerModal = styled.div`
         margin-top: 4px;
   }
   
-  .buttonRegisterModal:hover {
+  .buttonCancelModal:hover {
     border: 1.22px solid #BCE363;
     background-color:#BCE363;
   }
@@ -115,9 +96,9 @@ export const ContainerModal = styled.div`
   .buttonDeleteModal {
         width: 47%;
         height: 40px;
-        background: #CED4FC;
+        background: #045071; 
         border-radius: 8px;
-        color:#045071;
+        color:#BCE363;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600;

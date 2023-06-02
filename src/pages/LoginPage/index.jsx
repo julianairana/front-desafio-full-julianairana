@@ -5,11 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "./loginSchema";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export const LoginPage = () => {
 
-    const {loginClient, loading} = useContext(AuthContext);
+    const {loginClient, loading, client, newLoading} = useContext(AuthContext);
 
     const navigate = useNavigate()
   
@@ -25,14 +25,14 @@ export const LoginPage = () => {
   
     const submit = async (data) => {
       await loginClient(data);
-     
-      setTimeout(()=> {
-        navigate("/home")
-  
-      }, 5000)
       reset();
-    }
+    };
   
+    useEffect(() => {
+      if (!client) {
+        navigate("/");
+      }
+    },[client, navigate]);
   
     return (
       <>

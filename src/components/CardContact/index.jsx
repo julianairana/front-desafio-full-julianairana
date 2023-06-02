@@ -23,7 +23,7 @@ export const CardContact = ({element}) => {
         <h2>Hora: <p>{timeFormated}</p></h2>
       </div>
       <div className="divIcons">
-       <button type="button" className="buttonEdit"  onClick={() => {handleEditModal(); setEditSelect(element)}} ></button>
+       <button type="button" className="buttonEdit"  onClick={() => {handleEditModal(); setEditSelect(element)}}></button>
        <button className="buttonDelet" onClick={() => deletContact(element.id)}></button>
       </div>
     </StyledCardContact>

@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export const ContactContext = createContext({});
 
@@ -12,8 +13,11 @@ export const ContactProvider = ({ children }) => {
   const [editSelect, setEditSelect] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [modalIsEditClientOpen, setIsEditClientOpen] = useState(false);
-  const [editClientSelect, setEditClientSelect] = useState(null);
+  const [modalIsClientOpen, setIsClientOpen] = useState(false);
+  const [clientSelect, setClientSelect] = useState(null);
+
+  const [modalIsDeletOpen, setIsDeletOpen] = useState(false);
+  const [deletSelect, setDeletSelect] = useState(null);
 
   const contact = client?.contacts;
 
@@ -38,6 +42,18 @@ export const ContactProvider = ({ children }) => {
   function handleEditModal() {
     setIsEditOpen(!modalIsEditOpen);
   }
+
+  function handleClientModal(client) {
+    setClientSelect(client);
+    setIsClientOpen(!modalIsClientOpen);
+  }
+
+  function handleDeletModal(client) {
+    setDeletSelect(client);
+    setIsDeletOpen(!modalIsDeletOpen);
+  }
+
+
 
   async function EditContact(data) {
     try {
@@ -68,6 +84,51 @@ export const ContactProvider = ({ children }) => {
     }
   }
 
+
+  async function EditClient(client) {
+    try {
+      setLoading(true);
+      await api.patch(`/clients/${client.id}`, client);
+      getClient();
+      setIsClientOpen(false);
+      toast.success("Cliente alterado com sucesso!");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const navigate = useNavigate();
+
+  const deleteToken = () => {
+    localStorage.removeItem("@TOKEN");
+    localStorage.removeItem("@TOKENCLIENT");
+  };
+
+  const redirectToLogin = () => {
+    navigate("/");
+  };
+
+  async function DeletClient(id) {
+    try {
+      setLoading(true);
+
+      await api.delete(`/clients/${id}`);
+      getClient();
+
+      toast.info("Cliente deletado com sucesso!");
+
+      deleteToken();
+      redirectToLogin();
+
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <ContactContext.Provider
       value={{
@@ -86,6 +147,21 @@ export const ContactProvider = ({ children }) => {
         setIsEditOpen,
         handleEditModal,
         deletContact,
+        clientSelect, 
+        setClientSelect, 
+        handleClientModal, 
+        EditClient, 
+        modalIsClientOpen, 
+        setIsClientOpen,
+        DeletClient,
+        handleDeletModal,
+        modalIsDeletOpen,
+        setIsDeletOpen,
+        setDeletSelect,
+        deletSelect,
+        deleteToken,
+        redirectToLogin
+        
       }}
     >
       {children}
