@@ -8,23 +8,7 @@ export const modalEditClientSchema = yup.object().shape({
     email: yup
       .string()
       .email("É necessário fornecer um e-mail."),
-    password: yup
-      .string()
-      .min(8, "É necessário conter ao menos 8 caracteres.")
-      .matches(
-        /(?=.*[A-Z])/,
-        "É necessário conter ao menos uma letra maiúscula."
-      )
-      .matches(
-        /(?=.*[a-z])/,
-        "É necessário conter ao menos uma letra minúscula."
-      )
-      .matches(/(?=.*\d)/, "É necessário conter ao menos um dígito.")
-      .matches(
-        /(?=.*[$*&@#])/,
-        "É necessário conter ao menos um caractere especial."
-      ),
-    image: yup.string(),
+    image: yup.string().optional(),
     phone: yup.string(),
     gender: yup.string()
   });

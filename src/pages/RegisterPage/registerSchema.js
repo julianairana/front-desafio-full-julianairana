@@ -27,9 +27,7 @@ export const registerSchema = yup.object().shape({
         /(?=.*[$*&@#])/,
         "É necessário conter ao menos um caractere especial."
       ),
-    image: yup
-      .string()
-      .required("Coloque uma imagem"),
+    image: yup.string(),
     phone: yup.string().required("O seu contato é obrigatório!"),
     gender: yup.string().required("A opção de gênero é opcional!")
   });

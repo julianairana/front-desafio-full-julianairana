@@ -14,12 +14,13 @@ export const ContainerModal = styled.div`
 .divModal {
     max-width: 369px;
     width: 100%;
-    height: 342px;
+    /* height: 342px; */
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
+    background-color:#045071;
   }
 
   .divModalHeader {
@@ -57,7 +58,7 @@ export const ContainerModal = styled.div`
     max-width: 369px;
     width: 100%;
     padding: 12px 20px;
-    background-color:#045071;
+    /* background-color:#045071; */
     display: flex;
     flex-direction: column;
     gap: 12.33px;
@@ -94,7 +95,6 @@ export const ContainerModal = styled.div`
   }
 
   .buttonRegisterModal {
-        width: 47%;
         height: 40px;
         background: #CED4FC;
         border-radius: 8px;
@@ -113,7 +113,7 @@ export const ContainerModal = styled.div`
   }
 
   .buttonDeleteModal {
-        width: 47%;
+        width: 75%;
         height: 40px;
         background: #CED4FC;
         border-radius: 8px;
@@ -123,7 +123,7 @@ export const ContainerModal = styled.div`
         font-weight: 600;
         font-size: 16px;
         line-height: 28px;
-        margin-top: 4px;
+        margin-bottom: 8px;
   }
 
   .buttonDeleteModal:hover {

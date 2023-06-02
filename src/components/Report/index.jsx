@@ -33,5 +33,5 @@ export function DownloadButton() {
         console.error("Erro ao baixar o PDF:", error);
       });
   };
-  return <button className="buttonPDF" onClick={handleDownload}>Baixar PDF</button>;
+  return <button className="buttonPDF" onClick={handleDownload}>Baixar lista</button>;
 }

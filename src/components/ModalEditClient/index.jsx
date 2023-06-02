@@ -16,7 +16,6 @@ export const ModalEditClient = () => {
             id: client.client.id,
             name: client.client.name,
             email: client.client.email,
-            password: client.client.password,
             image: client.client.image,
             phone: client.client.phone,
             gender: client.client.gender,
@@ -63,18 +62,10 @@ const editClientModal = (
           />
            {errors.email?.message && <span>{errors.email.message}</span>}
 
-           <label htmlFor="password" className="modalLabel">Senha</label>
-              <input
-                type="password"
-                placeholder="Digite aqui sua senha"
-                className="modalInput"
-                {...register("password")}
-              />
-              {errors.password?.message && <span>{errors.password.message}</span>}
-
               <label htmlFor="image" className="modalLabel">Imagem</label>
               <input
                 type="url"
+                name="image"
                 placeholder="Coloque uma imagem"
                 className="modalInput"
                 {...register("image")}
@@ -111,13 +102,13 @@ const editClientModal = (
           {errors.gender?.message && (
               <span>{errors.gender.message}</span>
             )}
-            <div className="divButtons">
+            {/* <div className="divButtons"> */}
           <button type="submit" className="buttonRegisterModal" disabled={loading}>
             {loading? "carregando": "Editar Cliente"}
           </button>
-          <button type="submit" className="buttonDeleteModal" onClick={() => {handleDeletModal()}}>Deletar conta</button>
-          </div>
+          {/* </div> */}
         </form>
+          <button type="submit" className="buttonDeleteModal" onClick={() => {handleDeletModal()}}>Deletar conta</button>
       </div>
     </ContainerModal>
         )

@@ -9,7 +9,7 @@ import { useContext, useEffect } from "react";
 
 export const LoginPage = () => {
 
-    const {loginClient, loading, client, newLoading} = useContext(AuthContext);
+    const {loginClient, loading, client } = useContext(AuthContext);
 
     const navigate = useNavigate()
   

@@ -11,6 +11,7 @@ import { ModalEditClient } from "../../components/ModalEditClient";
 import { ModalDeletClient } from "../../components/ModalDeletClient";
 import { DownloadButton } from "../../components/Report";
 import notContact from "../../img/notContact.png";
+import imgPerfil from "../../img/imgPerfil.png";
 
 export const HomePage = () => {
     const { client, newLoading } = useContext(AuthContext);
@@ -44,7 +45,10 @@ export const HomePage = () => {
         <HomeHeader>
             <h2>Olá, {client.client.name}</h2>
           <div className="divPerfil">
-            <img className="imgPerfil" src={client.client.image} alt="" />
+            {!client.client.image ? (
+                <img className="imgPerfil" src={imgPerfil} alt="" />) : (
+                  <img className="imgPerfil" src={client.client.image} alt="" />
+            )}
             <button type="button" className="buttonPerfil" onClick={() => {handleClientModal(); setClientSelect(client.client)}}>Editar perfil</button>
           </div>
        

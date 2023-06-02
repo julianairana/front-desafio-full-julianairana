@@ -50,7 +50,9 @@ export const HomeHeader = styled.div`
         height: 46px;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3px;
 
 
         h2 {
@@ -111,12 +113,12 @@ export const HomeCards = styled.div`
         height: 100vh;
         display: flex;
         flex-direction: column;
+        margin-top: 27px;
 
         div {
         display: flex;
         align-items: baseline;
         justify-content: space-around;
-        margin-top: 14px;
         margin-bottom: 3px;
         }
 
@@ -181,7 +183,7 @@ export const HomeCards = styled.div`
         justify-content: center;
         flex-wrap: wrap;
         flex-direction: column;
-        margin-top: 30px;
+        margin-top: 10px;
         padding: 12px 0px 12px 0px;
         flex-direction: row;
         gap: 20px;
